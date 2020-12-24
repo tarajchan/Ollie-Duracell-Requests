@@ -1,0 +1,25 @@
+@import '../Fonts/fonts.css';
+
+@import '../../../myStyleguide/sass/Helpers/mixins',
+'../../../tarajchan.github.io/cssReset',
+'../../../tarajchan.github.io/Themes/font-styles',
+'../../../tarajchan.github.io/navigationBar/navigationBar';
+
+@mixin red {
+  background: green;
+}
+
+html {
+  @include red;
+  color: white;
+}
+
+.main {
+  padding: 5rem 0 0;
+}
+
+//NAVIGATION BAR RE-STYLE
+
+.navigationBar__header {
+  font-family: $barlow-bold;
+}

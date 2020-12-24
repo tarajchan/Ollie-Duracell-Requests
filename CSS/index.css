@@ -1,0 +1,657 @@
+@import '../Fonts/fonts.css';
+/*Vendor prefix mixin*/
+/*@font-face mixins*/
+/*background mixins*/
+/*@keyframes mixins (animation mixins)*/
+@keyframes slide-vertical {
+  from {
+    margin-bottom: 20%;
+    height: 50%;
+  }
+  to {
+    margin-bottom: 100%;
+    height: 200%;
+  }
+}
+@keyframes ease {
+  from {
+    max-height: 0%;
+  }
+  to {
+    max-height: 100%;
+  }
+}
+/*Icon mixins*/
+/*Only input a string value for the $direction argument, leave the position
+argument unquoted in order for the CSS to render properly*/
+/*Box model dimensions*/
+/*DOESN't work*/
+/*Mixins for height (percentage) */
+/*Mixins for media image sizing*/
+/*Border Stylings*/
+/*Transition Mixins*/
+/*
+@mixin transition($animations: ()) {
+	$transition: map-merge((
+		animation-iteration-count: 1,
+		animation-duration: 0.3s,
+		animation-timing-function: ease,
+		animation-fill-mode: both), $animations);
+
+	animation-iteration-count: map-get($transition, animation-iteration-count);
+	animation-duration: map-get($transition, animation-duration);
+	animation-timing-function: map-get($transition, animation-timing-function);
+	animation-fill-mode: map-get($transition, animation-fill-mode);
+
+}
+*/
+/*Typography Mixins*/
+/*Box shadow*/
+/*Specify inset value as false to turn off inset property value*/
+/*Flexbox helpers*/
+/*MARGIN & PADDING HELPERS*/
+/*create a margin or padding offset by plugging in a value and string that represents
+the direction of where you want the margin spacing to be applied*/
+/*Positioning mixins*/
+/*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
+/*Grid gap mixins*/
+/*Media Query Mixins*/
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/**********************CUSTOM RESET STYLES**************************/
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  overflow-y: scroll;
+  height: 100%;
+  /*ADD TO MAIN RESET STYLESHEET*/
+}
+
+body {
+  height: 100%;
+}
+
+a:-webkit-any-link {
+  cursor: default;
+}
+
+strong {
+  font-weight: 600;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  color: inherit;
+}
+
+/************************NAVIGATION BAR OPTIONS************************/
+
+.navigationBar {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 3.5rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  color: white;
+}
+
+.navigationBar__backdrop {
+  position: absolute;
+  right: -2rem;
+  border-left: 0.15rem solid #ffffff;
+  width: 66.67%;
+  height: 100%;
+  transform: skewX(30deg);
+  z-index: 0;
+}
+
+.navigationBar__container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  background: black;
+  background-size: 100% 100%;
+  z-index: 1;
+  box-shadow: 0 0.05rem 0.25rem #ffffff73;
+}
+
+.navigationBar__expander {
+  display: block;
+  position: relative;
+  right: -1.15rem;
+  z-index: 2;
+  font-size: 2rem;
+  height: 100%;
+  border-left: 0.05rem solid #ffffff73;
+}
+
+.navigationBar__expander .fa-ellipsis-h:hover {
+  cursor: pointer;
+  box-shadow: inset 0.15rem 0.15rem 0.5rem #ffffff82;
+}
+
+.navigationBar__expander .fa-ellipsis-h {
+  position: relative;
+  padding: 0.25rem;
+  top: -0.75rem;
+  left: -0.05rem;
+  border-left: 0.05rem solid #ffffff82;
+  font-size: 1.75rem;
+  transform: rotate(90deg) translateX(100%);
+}
+
+.navigationBar__group {
+  position: relative;
+  width: 38%;
+}
+
+.navigationBar__input {
+  position: absolute;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 90%;
+  height: 100%;
+}
+
+.navigationBar__input .fa-search {
+  order: 2;
+  margin-bottom: 0.5rem;
+  margin-left: 0.5rem;
+  color: #ffffff73;
+  cursor: pointer;
+  transition: color 0.25s ease-in;
+}
+
+.navigationBar__input .fa-search:hover {
+  color: white;
+}
+
+.navigationBar__item {
+  height: 100%;
+  border-bottom: 0;
+  transition: background-color 0.25s ease-in-out;
+  z-index: 1;
+}
+
+.navigationBar__item a span {
+  transform: skewX(0deg);
+}
+
+.navigationBar__item a:active {
+  background-color: #2b3392;
+}
+
+.navigationBar__item.contact {
+  position: relative;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: auto;
+  border-radius: 0;
+  box-shadow: none;
+  /*background: linear-gradient(to right, #000000a3, #2b3392 25%, #422e2e 75%, #0d351e 100%);
+  */
+  background: black;
+  text-shadow: -1rem -0.5rem 0.05rem, 1.25rem 0.5rem 0.15rem;
+}
+
+.navigationBar__item.contact a {
+  padding: 0.75rem 1rem;
+  font-family: "Barlow Condensed Regular";
+  font-size: 1rem;
+  transform: skewX(0);
+}
+
+.navigationBar__item.contact a:hover {
+  transition: 0.25s all ease-in-out;
+  transform: scale(1.05, 1.05);
+  cursor: pointer;
+}
+
+.navigationBar__item.logo {
+  position: relative;
+  border-top: none;
+  border-bottom: none;
+  margin-left: 0;
+  border-bottom-left-radius: 0;
+  height: 100%;
+  background: black;
+  z-index: 1;
+}
+
+.navigationBar__item.logo > a:hover {
+  cursor: pointer;
+}
+
+.navigationBar__item:not(.logo) a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  width: 100%;
+  font-family: "Barlow Condensed Thin";
+  width: 6rem;
+  height: 100%;
+}
+
+.navigationBar__item.dropdown {
+  flex-direction: column;
+  position: relative;
+  transition: background-color 0.1s ease-out;
+}
+
+.navigationBar__item.dropdown.active {
+  background-color: #2a646d;
+  box-shadow: inset 0 0 0.75rem #0c9dc1d4;
+  z-index: 2;
+}
+
+.navigationBar__item.dropdown.active > .navigationBar__item {
+  display: block;
+}
+
+.navigationBar__item:last-of-type {
+  margin-right: 0;
+}
+
+.navigationBar__header {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  font-family: "Assistant Bold";
+  font-size: 2rem;
+}
+
+/************************NAVIGATION BAR OPTIONS************************/
+.navigationBar__directory {
+  position: relative;
+  display: inline-flex;
+  justify-content: flex-end;
+  top: 0;
+  height: 100%;
+  width: 66.67%;
+}
+
+.navigationBar__directory__menu {
+  position: relative;
+  display: none;
+  flex-direction: row;
+  align-items: flex-end;
+  height: 100%;
+}
+
+/************************NAVIGATION BAR MODULE POSITIONING AND EFFECTS************************/
+.navigationBar__directory .input__container .medium {
+  position: absolute;
+  top: 3.5rem;
+  left: -0.6rem;
+  transform: skew(-30deg);
+}
+
+.navigationBar__directory__menu .icon__wrapper {
+  left: 0.5rem;
+  transform: skewX(-30deg);
+}
+
+.navigationBar__directory__menu .icon--search {
+  top: -0.25rem;
+}
+
+.navigationBar__directory__menu .icon--search:hover {
+  cursor: pointer;
+}
+
+.navigationBar__directory__menu > .navigationBar__item {
+  border-left: 0;
+}
+
+.navigationBar__directory__menu > .navigationBar__item a {
+  background: transparent;
+}
+
+.navigationBar__directory__menu > .navigationBar__item a:hover {
+  cursor: pointer;
+  transition: 0.5s background-color ease-in-out;
+  background-color: #039e9e;
+}
+
+.navigationBar__directory__menu > .navigationBar__item.dropdown.active > .navigationBar__submenu {
+  border-top: 0.25rem solid white;
+}
+
+/************************NAVIGATION SUBMENU************************/
+.navigationBar__submenu {
+  width: 100%;
+  position: relative;
+  background: black;
+  transition: max-height 1s;
+}
+
+.navigationBar__submenu .navigationBar__item {
+  border-left: 0.05rem solid white;
+  margin: 0;
+}
+
+.navigationBar__submenu .navigationBar__item:last-child {
+  border-bottom: 0;
+}
+
+.navigationBar__submenu .navigationBar__item a {
+  width: 100%;
+  padding: 0.35rem 1rem;
+  text-align: center;
+  font-family: "Barlow Condensed Thin";
+  transform: skewX(0deg);
+  transition: background-color 0.25s ease-in-out;
+}
+
+.navigationBar__submenu .navigationBar__item a:hover {
+  background-color: #2b3392;
+}
+
+.navigationBar__submenu .navigationBar__item a:active {
+  background-color: #2b339270;
+}
+
+.navigationBar__item.dropdown.active > .navigationBar__submenu {
+  animation: none;
+  top: 0;
+  max-height: 30rem;
+  /*animation: slideDown 0.3s ease-out;*/
+  opacity: 1;
+}
+
+.navigationBar__item.dropdown.active > .navigationBar__submenu > .navigationBar__item {
+  display: block;
+}
+
+.navigationBar__item.dropdown.active .navigationBar__item.dropdown.active > .navigationBar__submenu {
+  animation: none;
+  /*animation: slideRight 0.3s ease-out;*/
+  top: -4%;
+}
+
+.navigationBar__item.dropdown .arrow--down {
+  position: absolute;
+  top: 2.45rem;
+  left: 48.5%;
+  border-top-color: white;
+  transform: skewx(0deg);
+}
+
+.navigationBar__menu--mobile {
+  position: relative;
+  top: 4rem;
+  transform: translateX(0);
+  width: 0;
+  font-family: "Barlow Condensed Thin";
+}
+
+.navigationBar__menu--mobile .navigationBar__directory__menu {
+  position: relative;
+  flex-direction: column;
+  align-items: initial;
+  max-height: 0;
+  opacity: 0;
+  width: 100%;
+  left: 0;
+  transition: max-height 0.3s ease-in-out;
+}
+
+.navigationBar__directory__menu > .navigationBar__item:not(:last-child) {
+  border-bottom: 0;
+}
+
+.navigationBar__menu--mobile.active {
+  width: 100%;
+}
+
+.navigationBar__menu--mobile.active .navigationBar__directory__menu {
+  display: block;
+  max-height: 50rem;
+  opacity: 1;
+}
+
+.navigationBar__menu--mobile .navigationBar__directory__menu > .navigationBar__item:hover {
+  cursor: default;
+}
+
+.navigationBar__menu--mobile.active .navigationBar__directory__menu > .navigationBar__item:hover {
+  cursor: pointer;
+}
+
+/*********CODE FOR MEDIA-QUERIES (TABLET & LAPTOP)*********/
+@media screen and (max-width: 745px) {
+  .navigationBar__input .fa-search {
+    display: block;
+    font-size: 1.25rem;
+    margin-top: 1rem;
+  }
+
+  .navigationBar__input .input--text {
+    display: none;
+  }
+
+  /*.navigationBar__item.dropdown.active .navigationBar__item.dropdown.active > .navigationBar__submenu {
+    animation: slideDown 0.3s ease-out;
+    top: 100%;
+    left: -0.05rem;
+  }*/
+}
+@media screen and (min-width: 600px) {
+  /*used to be MAX-WIDTH 600PX*/
+  .navigationBar__expander {
+    display: none;
+  }
+
+  .navigationBar__directory .navigationBar__directory__menu {
+    display: flex;
+  }
+
+  .navigationBar__menu--mobile {
+    transform: translateX(-10rem);
+  }
+
+  .navigationBar__menu--mobile, .navigationBar__menu--mobile.active {
+    display: none;
+  }
+
+  .navigationBar__submenu {
+    display: none;
+    max-height: 0;
+    position: absolute;
+    top: 100%;
+    background: black;
+    width: 11rem;
+  }
+
+  .navigationBar__submenu .navigationBar__item:last-child {
+    border-bottom: 0.05rem solid #ffffff73;
+  }
+
+  .navigationBar__submenu .navigationBar__submenu {
+    max-height: 0;
+    left: 100.5%;
+    top: 0;
+  }
+
+  .navigationBar__item a span {
+    display: inline-block;
+  }
+
+  .navigationBar__item.dropdown .arrow--down {
+    top: 2rem;
+    left: 40%;
+    transform: skewX(-30deg);
+    border-top-color: transparent;
+  }
+
+  .navigationBar__directory .navigationBar__directory__menu .navigationBar__item.dropdown:hover > .navigationBar__submenu {
+    display: block;
+    opacity: 1;
+    max-height: 30rem;
+  }
+
+  .navigationBar__directory .navigationBar__directory__menu .navigationBar__item.dropdown:hover > .navigationBar__submenu .navigationBar__item {
+    opacity: 1;
+    max-height: 5rem;
+  }
+
+  .navigationBar__header {
+    font-family: "Barlow Condensed Bold";
+  }
+
+  .navigationBar__item.dropdown {
+    flex-direction: column;
+  }
+
+  .navigationBar__item.dropdown.active {
+    transition: background-color 1s ease-out, box-shadow 1s ease-out;
+  }
+}
+
+/************************Table************************/
+
+.table {
+  display: flex;
+}
+
+.table tbody {
+  width: 100%;
+  border-bottom: 0.05rem solid white;
+}
+
+.row {
+  display: flex;
+  align-content: space-evenly;
+  justify-content: center;
+  margin: 0 auto;
+  border: 0.1rem solid white;
+  border-bottom: 0;
+}
+
+.column:first-child {
+  border-left: 0;
+}
+
+.column:last-child {
+  border-right: 0;
+}
+
+.column {
+  display: flex;
+  align-items: center;
+  font-family: "Barlow Condensed Thin";
+  padding: 0.25rem;
+  justify-content: center;
+  border-right: 0.1rem white solid;
+  width: 25%;
+}
+
+.column.title {
+  font-family: "Barlow Condensed Regular";
+}
+
+/*overriden styles*/
+html {
+  color: white;
+  background: linear-gradient(180deg, black, grey 100%);
+}
+
+.main {
+  padding: 6rem 2rem 0;
+  height: 100%;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.main_body {
+  width: 100%;
+  height: 100%;
+}
+
+.title_main {
+  font-size: 2rem;
+  font-family: "Barlow Condensed Bold";
+  padding: 0.5rem 0 0.75rem;
+  color: white;
+}
+
+/*# sourceMappingURL=index.css.map */

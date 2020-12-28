@@ -1,22 +1,9 @@
-@import '../Fonts/fonts.css';
 
-@import '../../../myStyleguide/sass/Helpers/mixins',
+@import 'fonts', '../../../myStyleguide/sass/Helpers/mixins',
 '../../../tarajchan.github.io/cssReset',
 '../../../tarajchan.github.io/Themes/font-styles',
-'../../../tarajchan.github.io/navigationBar/navigationBar';
+'navigationBar','main', 'table';
 
-@mixin red {
-  background: green;
-}
-
-html {
-  @include red;
-  color: white;
-}
-
-.main {
-  padding: 5rem 0 0;
-}
 
 //NAVIGATION BAR RE-STYLE
 

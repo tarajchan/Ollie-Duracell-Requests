@@ -61,6 +61,8 @@ let list = {};
 
   }
 
+  // template
+
   function loadJSON(url) {
 
     let urlRequest = new Request(url, {
@@ -73,7 +75,6 @@ let list = {};
       .then(function(json) {
         const json_string = JSON.stringify(json, null, '\t');
         const json_obj = JSON.parse(json_string);
-        //filterSongs("song_list", "number", json_obj);
         filterSongs("song_list", "number", "artist", "title", "user", json_obj);
         //listEl.textContent = json_string;
       });

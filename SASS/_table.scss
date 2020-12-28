@@ -1,0 +1,41 @@
+/************************Table************************/
+
+.table {
+    display: flex;
+  }
+  
+  .table tbody {
+    width: 100%;
+    border-bottom: 0.05rem solid white;
+  }
+  
+  .row {
+    display: flex;
+    align-content: space-evenly;
+    justify-content: center;
+    margin: 0 auto;
+    border: 0.1rem solid white;
+    border-bottom: 0;
+  }
+  
+  .column:first-child {
+    border-left: 0;
+  }
+  
+  .column:last-child {
+    border-right: 0;
+  }
+  
+  .column {
+    display: flex;
+    align-items: center;
+    font-family: "Barlow Condensed Thin";
+    padding: 0.25rem;
+    justify-content: center;
+    border-right: 0.1rem white solid;
+    width: 25%;
+  }
+  
+  .column.title {
+    font-family: "Barlow Condensed Regular";
+  }

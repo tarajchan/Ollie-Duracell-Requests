@@ -628,6 +628,7 @@ html {
 /************************Table************************/
 .table {
   display: flex;
+  flex-direction: column;
 }
 
 .table tbody {
